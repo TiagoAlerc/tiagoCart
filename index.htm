@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TiagoCart - Diamond Earrings</title>
+    <style>
+         body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+    }
+
+    /* --- Logo Bar --- */
+    .logo-bar {
+      color: #fff;
+      padding: 10px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo-bar-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      height: 70px; /* Bigger logo */
+      width: auto;
+    }
+
+    .logo-bar-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 5px;
+    }
+
+    .icon-row {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .icon {
+      height: 30px;
+      width: auto;
+      cursor: pointer;
+    }
+
+    .search-bar {
+      margin-top: 10px;
+    }
+
+    .search-bar input {
+      padding: 8px;
+      width: 200px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    /* --- Nav Bar (below logo) --- */
+    .navbar {
+      background-color: #27A7A0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 12px 0;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+        .container {
+            display: flex;
+            padding: 40px;
+        }
+        .product-img, .product-details {
+            flex: 1;
+            padding: 20px;
+        }
+        .product-img img {
+            width: 100%;
+            max-width: 400px;
+        }
+        .price {
+            color: red;
+            font-size: 20px;
+        }
+        .original-price {
+            text-decoration: line-through;
+            margin-right: 10px;
+        }
+        .buy-btn {
+            display: inline-block;
+            background-color: #298C9B;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        
+    /* --- Features Section --- */
+    .features {
+      display: flex;
+      align-items: center;
+      padding: 40px;
+      background-color: #f9f9f9;
+      column-gap: 90px;
+    }
+
+    .features-text h2 {
+      font-size: 36px;
+      font-weight: bold;
+      margin: 0;
+      color: #333;
+      white-space: nowrap;
+    }
+
+    .features-images {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .features-images img {
+      width: 100px;
+      height: auto;
+      transition: transform 0.3s;
+    }
+
+    .features-images img:hover {
+      transform: scale(1.1);
+    }
+
+    /* --- Model Section --- */
+    .model-section {
+      display: flex;
+      align-items: center; /* This vertically centers items */
+      justify-content: space-between;
+      padding: 40px;
+      column-gap: 40px;
+    }
+
+    .model-section img.left-image {
+      width: 300px;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+    }
+
+    .model-section .right-column img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 6px;
+      margin-bottom: 15px;
+    }
+
+    .model-section .right-column {
+      flex: 1;
+    }
+
+    .model-section h3 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .model-section p {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .model-section ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      color: #555;
+    }
+
+    .model-section li {
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+	 /* Second webpage styles */
+    .reviews {
+      background: #f9f9f9;
+      padding: 20px;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+    }
+
+    .review-card {
+      width: 30%;
+    }
+
+    .review-card p {
+      font-size: 14px;
+    }
+
+    .trustpilot {
+      font-size: 12px;
+      color: #007f00;
+    }
+
+    .divider {
+      width: 100%;
+      height: 20px;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .complete-set {
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .complete-set h2 {
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .product {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .product img {
+      width: 180px;
+      height: auto;
+      margin: 10px 0;
+    }
+
+    .product h3 {
+      font-size: 18px;
+      margin: 5px 0;
+    }
+
+    .product p {
+      font-size: 14px;
+      margin: 5px 0;
+      max-width: 400px;
+    }
+
+button .buy-btn {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #27A7A0;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+ .buy-btn:hover {
+      background-color: #0083a8;
+    }
+ /* --- Reviews Heading & Arrow --- */
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px 10px 40px;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #ddd;
+}
+
+.review-header h2 {
+  font-size: 24px;
+  color: #333;
+  margin: 0;
+}
+
+.arrow-icon {
+  font-size: 24px;
+  color: #888;
+}
+
+/* --- Reviews Section --- */
+.reviews {
+  background: #f9f9f9;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.review-card {
+  width: 30%;
+  min-width: 250px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+  padding: 15px;
+  text-align: center;
+}
+
+.review-card p {
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+.trustpilot {
+  font-size: 12px;
+  color: #007f00;
+}
+
+.rating-stars {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+}
+
+.star {
+  font-size: 18px;
+  color: #ccc; /* colorless star */
+}
+
+.star.filled {
+  color: green; /* filled star */
+}
+
+.complete-set {
+  padding: 30px 40px;
+  background-color: #f9f9f9;
+}
+
+.complete-set h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.product-container {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* Left: Images */
+.image-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main-image {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.thumbnail-row {
+  display: flex;
+  gap: 10px;
+}
+
+.thumbnail {
+  width: 80px;
+  height: auto;
+  cursor: pointer;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  transition: transform 0.2s;
+}
+
+.thumbnail:hover {
+  transform: scale(1.05);
+}
+
+/* Right: Product Text */
+.product-details2 {
+  max-width: 300px;
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.product-details2 h3 {
+  font-size: 20px;
+  color: #222;
+}
+
+.product-details2 p2 {
+  font-size: 16px;
+  color: #555;
+}
+
+button .buy-btn {
+  padding: 10px 20px;
+  background-color: #298C9B;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buy-btn:hover {
+  background-color: darkgreen;
+}
+.complete-set {
+  padding: 30px 40px;
+  padding-left: 80px; /* Add left spacing */
+  background-color: #f9f9f9;
+}
+
+/*----Contact Us ---------*/
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.newsletter {
+  background-color: #298C9B;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.newsletter h2 {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.newsletter-inputs {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.newsletter input {
+  padding: 12px;
+  width: 250px;
+  border: none;
+  font-size: 14px;
+}
+
+.newsletter button {
+  padding: 12px 30px;
+  background-color: white;
+  color: black;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+  background-color: #fff;
+  position: relative;
+}
+
+.footer-section h3 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin: 6px 0;
+  cursor: pointer;
+  color: #333;
+}
+
+.chat-bubble {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
+.chat-bubble button {
+  background-color: #27A7A0;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.chat-bubble button::after {
+  content: '💬';
+  margin-left: 10px;
+}
+
+
+    </style>
+</head>
+<body>
+ <!-- Logo Bar -->
+  <div class="logo-bar">
+    <div class="logo-bar-left">
+      <img src="C:\Users\imran_PC\OneDrive\Desktop\WebProject\logo.PNG" alt="TiagoCart Logo" class="logo">
+    </div>
+    <div class="logo-bar-right">
+      <div class="icon-row">
+        <img src="C:\Users\imran_PC\OneDrive\Desktop\WebProject\account.png" alt="Account" class="icon">
+        <img src="C:\Users\imran_PC\OneDrive\Desktop\WebProject\cart.png" alt="Cart" class="icon">
+        <img src="C:\Users\imran_PC\OneDrive\Desktop\WebProject\map.png" alt="country" class="icon">
+      </div>
+      <input type="text" class="search-bar" placeholder="Search...">
+    </div>
+  </div>
+
+    <!-- Nav Bar -->
+  <div class="navbar">
+    <a href="#">Rings</a>
+    <a href="#">Weddings</a>
+    <a href="#">Engagement</a>
+    <a href="#">Diamonds</a>
+    <a href="#">Earrings</a>
+    <a href="#">Pendants</a>
+    <a href="#">Bracelets</a>
+    <a href="#">Clearence</a>
+    <a href="#">New Arrivals</a>
+    <a href="#">Custom Rings</a>
+  </div>
+
+  <!-- Product Section -->
+  <div class="container">
+    <div class="product-img">
+      <img src="C:\Users\imran_PC\OneDrive\Desktop\WebProject\Untitled1.PNG" alt="Diamond Stud Earrings">
+    </div>
+    <div class="product-details">
+      <h2>Maple Leaf Diamonds Winds Embrace 18ct White Gold Diamond Stud Earrings</h2>
+      <p>
+        <span class="original-price">£1,100</span>
+        <span class="price">£710</span>
+      </p>
+      <p>Presented in an 18ct white gold setting, a unique mix of gold from the Royal Canadian Mint and palladium for a bright white finish (0.25ct).</p>
+      <p><strong>In stock. Free delivery</strong> within 2 days.</p>
+      <a href="#" class="buy-btn">BUY NOW</a>
+    </div>
+  </div>
+
+
+    <!-- Features Section -->
+  <div class="features">
+    <div class="features-text">
+      <h2>For Peace of Mind</h2>
+    </div>
+    <div class="features-images">
+      <img src="C:\Users\imran_PC\OneDrive\Desktop\WebProject\authentic.PNG" alt="Authentic">
+      <img src="C:\Users\imran_PC\OneDrive\Desktop\WebProject\warenty.PNG" alt="Lifetime Warranty">
+      <img src="C:\Users\imran_PC\OneDrive\Desktop\WebProject\30Day.PNG" alt="30 Day Return">
+      <img src="C:\Users\imran_PC\OneDrive\Desktop\WebProject\percent.PNG" alt="0% Finance">
+    </div>
+  </div>
+
+  <!-- Model Section -->
+  <div class="model-section">
+    <img src="C:\Users\imran_PC\OneDrive\Desktop\WebProject\model.PNG" alt="Model wearing earrings" class="left-image">
+    <div class="right-column">
+      <div style="text-align: center;">
+        <img src="C:\Users\imran_PC\OneDrive\Desktop\WebProject\2ndlogo.PNG" alt="Diamond Close-up" style="max-width: 400px; width: 100%; height: auto; border-radius: 6px; margin-bottom: 15px;">
+      </div>
+      <p>Sophisticated and glamorous, these beautiful 18ct White Gold Maple Leaf Diamond stud earrings deserve to become every girl's best friend. Featuring the iconic wind's embrace design, they are a distinctive addition to your diamond collection.</p>
+      <p>At A Glance:</p>
+      <ul>
+        <li>18ct white gold setting with Royal Canadian Mint & palladium</li>
+        <li>0.25ct diamonds</li>
+        <li>Free delivery</li>
+        <li>Lifetime warranty</li>
+        <li>30-day free returns</li>
+      </ul>
+    </div>
+  </div>
+
+<!-- Second webpage content -->
+
+  <!-- Reviews Section -->
+<!-- Reviews Section -->
+  <div class="reviews">
+
+    <div class="review-card">
+	<p class="rating-stars">
+        <span class="star filled">&#9733;</span>
+        <span class="star filled">&#9733;</span>
+        <span class="star filled">&#9733;</span>
+        <span class="star filled">&#9733;</span>
+        <span class="star">&#9733;</span>
+      </p>
+      <p>"Absolutely stunning earrings. A great investment for any occasion!"</p>
+      <p class="trustpilot">TrustPilot</p>
+    </div>
+    <div class="review-card">
+      <p class="rating-stars">
+        <span class="star filled">&#9733;</span>
+        <span class="star filled">&#9733;</span>
+        <span class="star filled">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+      </p>
+      <p>"Quick delivery and beautiful quality! I love them!"</p>
+      <p class="trustpilot">TrustPilot</p>
+    </div>
+    <div class="review-card">
+      <p class="rating-stars">
+        <span class="star filled">&#9733;</span>
+        <span class="star filled">&#9733;</span>
+        <span class="star filled">&#9733;</span>
+        <span class="star filled">&#9733;</span>
+        <span class="star">&#9733;</span>
+      </p>
+      <p>"Perfect gift for my wife. She absolutely loved them!"</p>
+      <p class="trustpilot">TrustPilot</p>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+ <div class="complete-set">
+  
+  <div class="product-container">
+    
+    <!-- Left: Images -->
+    <div class="image-gallery">
+      <img src="C:\Users\imran_PC\OneDrive\Desktop\WebProject\necklace.PNG" class="main-image" alt="Main Product Image">
+      <div class="thumbnail-row">
+        <img src="C:\Users\imran_PC\OneDrive\Desktop\WebProject\necklace.PNG" class="thumbnail" alt="Thumbnail 1">
+        <img src="C:\Users\imran_PC\OneDrive\Desktop\WebProject\girl.PNG" class="thumbnail" alt="Thumbnail 2">
+        <img src="C:\Users\imran_PC\OneDrive\Desktop\WebProject\ring.PNG" class="thumbnail" alt="Thumbnail 3">
+      </div>
+    </div>
+
+    <!-- Right: Details -->
+    <div class="product-details2">
+	<h2>Complete the Set</h2>
+	<h2></h2>
+      <h3>9ct White Gold Diamond Pandant</h3>
+ 	<p>Price: £500</p>
+	<p> Ensure a look of complete luxury and finish with the matching pendant for maximum style and sparkle
+     
+      <button class="buy-btn">BUY NOW</button>
+    </div>
+
+  </div>
+</div>
+<div class="newsletter">
+  <h2>INSPIRATION IN YOUR INBOX</h2>
+  <p>Get our latest offers, jewellery inspiration and be the first to shop new arrivals</p>
+  <div class="newsletter-inputs">
+    <input type="email" placeholder="EMAIL ADDRESS">
+    <button>SIGN UP</button>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-section">
+    <h3>OUR COMPANY</h3>
+    <ul>
+      <li>About us</li>
+      <li>Sustainability</li>
+      <li>Privacy</li>
+      <li>Terms & Conditions</li>
+      <li>Cookies</li>
+      <li>Press</li>
+      <li>Diamond certificates</li>
+      <li>Exclusive Packaging</li>
+    </ul>
+  </div>
+  <div class="footer-section">
+    <h3>HELP & SUPPORT</h3>
+    <ul>
+      <li>FAQ</li>
+      <li>Ring size guide</li>
+      <li>Buying guide</li>
+      <li>Finance options</li>
+      <li>Payment options</li>
+      <li>101 proposal ideas</li>
+      <li>E-Gift Cards</li>
+    </ul>
+  </div>
+  <div class="footer-section">
+    <h3>CUSTOMER SERVICE</h3>
+    <ul>
+      <li>Contact us</li>
+      <li>Track your order</li>
+      <li>Delivery</li>
+      <li>Returns & Refunds</li>
+      <li>5 Years Guarantee</li>
+      <li>Insurance</li>
+    </ul>
+  </div>
+
+  <div class="chat-bubble">
+    <button>💬 How can we help you?</button>
+  </div>
+</footer>
+
+</body>
+</html>
